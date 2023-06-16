@@ -2,11 +2,25 @@
 Media sentiment made simple:  Harnessing market sentiment for Financial Forecasting.
 
 # 📈 Financial Sentiment Analysis: Decoding the Impact of News and Social Media Sentiment on Stock Market 📰💬
-Welcome to our thrilling project that navigates the intersection of financial sentiment, news, social media, and the stock market! We'll leverage the power of machine learning and natural language processing (NLP) to understand how the sentiment from news articles and social media posts influences stock market movements. Let's get cracking! 🚀
+Welcome to **"Mood Magnet"**, our thrilling project that navigates the intersection of financial sentiment, news, social media, and the stock market! We'll leverage the power of machine learning and natural language processing (NLP) to understand how the sentiment from news articles and social media posts influences stock market movements.
+
+Our goal? To create an investment tool focused on trends with real-time sentiment analysis, aiming for reliably accurate predictions on markets' feelings toward companies' products/services. We will train our model on sentiment data, including financial news and social media posts, and correlate it with stocks' closing prices. 🚀
+
+***"The first and simplest emotion which we discover in the human mind is curiosity." – Edmund Burke***
+
+Let's satisfy that curiosity and get cracking! 🕵️‍♂️🔎
 
 ## 📋 Project Proposal and Outline
 ### 🎯 Title
 Financial Sentiment Analysis: Impact of News and Social Media Sentiment on Stock Market
+
+# 🎯 Target Market:
+Our product is for the people - retail investors aged between 18-45. Given the rising trend of retail investment, we believe our tool could provide crucial insight to these new market entrants.
+# 📈 The Rise Of The Retail Investor:
+A new wave of investors is looking to make an impact on the market, and we are capitalizing on this need for affordable, accessible tools. With Mood Magnet, we're hoping to increase confidence in retail investors' strategies, making their entrance into the stock market more educated and informed.
+# 💡 Value:
+Mood Magnet is a simple to use investing tool, at an affordable monthly price point, payable in fiat currency, BTC and ETH. The future of the markets is entering the hands of the people willing to risk it for the biscuit. Better tools lead to better results. The retail revolution is now!
+
 
 # 🗂️ Data
 We'll gather financial news articles and social media posts related to the stock market from various sources, such as:
