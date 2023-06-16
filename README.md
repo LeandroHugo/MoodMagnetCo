@@ -1,4 +1,4 @@
-#### MoodMagnet
+## Mood Magnet 🧲
 Media sentiment made simple:  Harnessing market sentiment for Financial Forecasting.
 
 # 📈 Financial Sentiment Analysis: Decoding the Impact of News and Social Media Sentiment on Stock Market 📰💬
