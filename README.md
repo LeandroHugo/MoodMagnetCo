@@ -50,3 +50,4 @@ We plan to explore NLP techniques like BERT and LSTM for sentiment analysis. For
 ![Alt text](YFinance/MM1.png)Join us in this ambitious endeavor to untangle the intricate web of sentiment, social media, news, and stock market movements. Together, we'll shed light on how these dimensions interplay and influence each other. So, ready to explore and learn? Let's dive in! 🏊‍♂️🌊
 
 Get ready for a thrilling data journey! 🧳🗺️
+
