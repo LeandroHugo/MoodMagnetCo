@@ -2,6 +2,7 @@
 Media sentiment made simple:  Harnessing market sentiment for Financial Forecasting.
 
 # 📈 Financial Sentiment Analysis: Decoding the Impact of News and Social Media Sentiment on Stock Market 📰💬
+![Alt text](YFinance/MM2.png)
 Welcome to **"Mood Magnet"**, our thrilling project that navigates the intersection of financial sentiment, news, social media, and the stock market! We'll leverage the power of machine learning and natural language processing (NLP) to understand how the sentiment from news articles and social media posts influences stock market movements.
 
 Our goal? To create an investment tool focused on trends with real-time sentiment analysis, aiming for reliably accurate predictions on markets' feelings toward companies' products/services. We will train our model on sentiment data, including financial news and social media posts, and correlate it with stocks' closing prices. 🚀
@@ -46,6 +47,6 @@ We plan to explore NLP techniques like BERT and LSTM for sentiment analysis. For
 - Submission: Submit your project, which includes all code, visualizations, and a README summarizing your project and explaining how to use your model.
 
 # 🎉 Get Involved!
-Join us in this ambitious endeavor to untangle the intricate web of sentiment, social media, news, and stock market movements. Together, we'll shed light on how these dimensions interplay and influence each other. So, ready to explore and learn? Let's dive in! 🏊‍♂️🌊
+![Alt text](YFinance/MM1.png)Join us in this ambitious endeavor to untangle the intricate web of sentiment, social media, news, and stock market movements. Together, we'll shed light on how these dimensions interplay and influence each other. So, ready to explore and learn? Let's dive in! 🏊‍♂️🌊
 
 Get ready for a thrilling data journey! 🧳🗺️
