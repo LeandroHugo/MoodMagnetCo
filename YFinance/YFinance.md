@@ -1,4 +1,5 @@
 # 📊 Yahoo Finance - TESLA Stock Analysis Guide 🚀
+
 This tutorial will guide you through a simple pipeline to analyze the historical stock prices of TESLA using the Python yfinance library, and visualize data, pre-process it and make forecasting with Machine Learning.
 
 ### 📌 Setup
@@ -10,8 +11,7 @@ This tutorial will guide you through a simple pipeline to analyze the historical
 
 We'll need some important libraries to get started. Run the following to import all necessary packages:
 
-python
-Copy code
+```python
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -21,6 +21,7 @@ from keras.metrics import mean_absolute_error
 import yfinance as yf
 import matplotlib.pyplot as plt
 from pandas.plotting import scatter_matrix
+```
 
 ### 📈 Fetching TESLA Data
 
@@ -31,7 +32,7 @@ data = yf.download ("TSLA")
 ### 🎨 Visualizing the Data
 We will plot the data using Matplotlib and Seaborn:
 
-python
+```python
 Copy code
 def plot_columns(df):
   num_col = len(df.columns)
@@ -47,25 +48,30 @@ plot_columns(data)
 plt.figure(figsize=(15,5))
 sns.lineplot(data['Open'])
 plt.title('TESLA FINANCIAL TIME SERIES')
+```
 
 ### 💾 Data Pre-processing
 1. Split the data into train and test datasets with a split time of 2020-01-01:
 
-python
+```python
 Copy code
 split_time = '2020-01-01'
 train_data = data.loc[:split_time]
 test_data = data.loc[split_time:]
+```
 2. Focus on 'Open' stock data:
 
-python
+```python
 Copy code
 train_open_data = train_data['Open']
 valid_open_data = test_data['Open']
+```
 
 # SHOW SERIES
+```Python
 print(f'Train the Open Data \n{train_open_data.head()}\n')
 print(f'Validation for the Open Data \n{valid_open_data.head()}\n')
+```
 Now, we can begin to forecast with Machine Learning.
 
 For a detailed Machine Learning process using tensorflow, follow this notebook and copy the steps: **TESLA Stock Forecasting Notebook**
@@ -76,7 +82,9 @@ After training, check your model history insights and evaluate the model.
 Outliers are data points that are significantly different from the rest of the data. In the context of our analysis, we're focusing on the "Volume" variable, which is suspected to have outliers. Such outliers can distort our analysis, and to prevent this, we're going to remove this variable from our dataset.
 
 # Remove Volume variable from dataset
+```Python
 del data['Volume']
+```
 
 # Plot data after deletion of Volume
 sns.boxenplot(data)
@@ -90,7 +98,7 @@ Anomaly detection is a critical part of data analysis and has applications in ma
 
 First, install **adtk** library by running:
 
-python
+```python
 Copy code
 pip install adtk
 Then, import required libraries and modules:
@@ -100,35 +108,45 @@ Copy code
 from adtk.data import validate_series
 from adtk.visualization import plot
 from adtk.detector import *
+```
+
 Continue the process for outlier detection, and model evaluation.
 
 ## Threshold Detector
 Threshold detection is a commonly used technique for detecting anomalies in various applications. A threshold value is set, and any readings that exceed this threshold value are considered anomalous. The success of this technique depends on setting an appropriate threshold value, which can be determined through statistical analysis or by domain experts.
 
+```Python
 Threshold_detector = ThresholdAD(low=3, high=140)
 anomalies = Threshold_detector.detect(open_data)
 plot(open_data,anomaly=anomalies, anomaly_color="orange", anomaly_tag='marker')
 plt.title("Threshold Anomaly Detection TESLA")
+```
 
 ## Quantile Detector
 A quantile detector is a statistical tool used to detect the presence of outliers or anomalies in a dataset. It works by dividing the dataset into equal parts based on the distribution of the data and then identifying any data points that fall outside of the expected range.
 
+```Python
 quantile_detector = QuantileAD(low=0.1, high=0.98)
 anomalies = quantile_detector.fit_detect(open_data)
 plot(open_data,anomaly=anomalies, anomaly_color="orange", anomaly_tag="marker")
 plt.title("Quantile Anomalies Detection")
+```
 
 # Inter Quartile Detector
 The Inter Quartile Detector works by analyzing the inter-quartile range of historical data, which is the range between the 25th (1st) and 75th (3rd) percentiles of a dataset. Anomalies are detected if the values fall outside of this range.
 
+
+```Python
 iqr_detector = InterQuartileRangeAD(c=1.5)
 anomalies = iqr_detector.fit_detect(open_data)
 plot(open_data,anomaly=anomalies, anomaly_color="orange", anomaly_tag="marker")
 plt.title("Inter Quantile Range Anomaly Detection")
+```
 
 ## Persistent Detector
 This detector compares time series values with the values of their preceding time windows, and identifies a time point as anomalously large if the change of value from its preceding average or median is significantly different.
 
+```Python
 persist_detector = PersistAD(c=15, side='positive')
 anomalies = persist_detector.fit_detect(open_data)
 plot(open_data,anomaly=anomalies, anomaly_color='orange')
@@ -138,14 +156,17 @@ persist_detector = PersistAD(c=15, side='negative')
 anomalies = persist_detector.fit_detect(open_data)
 plot(open_data,anomaly=anomalies, anomaly_color='orange')
 plt.title('Negative Persist Anomaly Detector')
+```
 
 ## Volatility Detector
 Volatility refers to the degree of variation in the values of a data set over time. The Volatility Detector is used to detect shifts in this volatility, which may indicate changes in the underlying factors affecting the data.
 
+```Python
 volatility_detector = VolatilityShiftAD(c=6.0, side='positive', window=30)
 anomalies = volatility_detector.fit_detect(open_data)
 plot(open_data, anomaly=anomalies, anomaly_color='orange')
 plt.title('Volatility Anomaly Detection')
+```
 
 These various anomaly detection techniques provide different lenses through which to view and understand the Tesla stock price data. Understanding these anomalies can be crucial in making informed decisions and identifying potential risks and opportunities.
 
